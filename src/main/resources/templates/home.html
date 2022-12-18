@@ -21,6 +21,20 @@
         <h1>Hello Webdzion!</h1>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p th:text="${welcome}"></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul th:each="aula : ${aulas}">
+          <li th:text="${aula}"></li>
+        </ul>
+      </div>
+    </div>
   </main>
 
   <script th:src="@{/js/bootstrap.min.js}"></script>
