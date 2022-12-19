@@ -1,20 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html th:replace="~{layout :: layout (~{::title}, ~{::main})}">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spring Fundamentos - Listagem de Clientes</title>
-
-  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">ClientsApp</a>
-    </div>
-  </nav>
-
   <main class="container mt-4">
     <div class="row">
       <div class="col-sm-12">
@@ -30,7 +19,6 @@
 
         <h5 th:if="${#lists.isEmpty(clientes)}">Não há clientes cadastrados no momento!</h5>
 
-        <!-- <table class="table" th:if="${! #lists.isEmpty(clientes)}"> -->
         <table class="table" th:unless="${#lists.isEmpty(clientes)}">
           <thead>
             <tr>
@@ -69,7 +57,5 @@
       </div>
     </div>
   </main>
-
-  <script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
